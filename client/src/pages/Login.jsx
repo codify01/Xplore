@@ -47,6 +47,7 @@ const Login = () => {
       });
       setArtist(data.artists.items)
       console.log(data.artists.items);
+      setArtist(data.artists.items)
       console.log(artist);
     } catch (err) {
       console.error(err);
@@ -58,10 +59,7 @@ const Login = () => {
     //     <Card key={index} image={artist.images.lenght? artist.images[0].url: ''} name={artist.name} />
 
     // })
-    // artist.map((result)=>(
-    //   console.log(result),
-    //   console.log(result.images[0].url)
-    // ))
+   
   }
 
   return (
@@ -80,13 +78,21 @@ const Login = () => {
         :
         <form onSubmit={searchArtist}>
           <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-          <button type='submit'>Search</button>
+          <button type='submit'>Search Artist</button>
         </form>
       }
-      {/* {
-        showArtist()
-      } */}
-
+      <div className=''>
+        {
+          artist.map((result)=>(
+            // console.log(result),
+            // console.log(result.images[0].url)
+            <>
+              {/* <h1>{result.images[0].url}</h1> */}
+              <Card  image={result.images.length ? result.images[0].url : null} title={result.name} description={result.genres.length ? result.genres[0] : 'NIL'}/>
+            </>
+          ))
+        }
+      </div>
     </div>
   );
 }

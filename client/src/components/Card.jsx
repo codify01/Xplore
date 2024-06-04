@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-const Card = ({image,title}) => {
+const Card = ({image,title,description}) => {
   return (
-    <div>
-        <div className='bg-neutral-700 p-3 rounded w-[210px]'>
-            <img src={`${image}`} alt="thumbnail" />
-            <p>{title}</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
+    <>
+        <div className='bg-neutral-800 text-neutral-400 p-5 rounded w-[210px]'>
+            <img src={`${image}`} alt="thumbnail" className='rounded aspect-square' />
+            <h1>{title}</h1>
+            <p className='font-semibold capitalize text-wrap trans'>{description}</p>
         </div>
-    </div>
+    </>
   )
 }
 
