@@ -81,7 +81,7 @@ const Login = () => {
           <button type='submit'>Search Artist</button>
         </form>
       }
-      <div className=''>
+      <div className='grid grid-cols-8 px-8 '>
         {
           artist.map((result)=>(
             // console.log(result),
